@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  reporting-app:
+    build: .
+    container_name: java-reporting-app
+    ports:
+      - "9006:9006"
+    environment:
+      - SPRING_DATA_REDIS_HOST=reporting-redis
+    depends_on:
+      - reporting-redis
+
+  reporting-redis:
+    image: redis:7-alpine
+    container_name: java-reporting-redis
+    ports:
+      - "16406:6379"

@@ -1,0 +1,15 @@
+server:
+  port: 9006
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6383
+
+wallet:
+  service-url: http://localhost:9002
+payment:
+  service-url: http://localhost:9003
+auth:
+  service-url: http://localhost:9001
